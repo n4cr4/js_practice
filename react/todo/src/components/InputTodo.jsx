@@ -7,7 +7,7 @@ const style = {
   borderRadius: "8px",
 };
 
-export const InputTodo = ({ todoText, onChange, onClick }) => {
+export const InputTodo = ({ todoText, onChange, onClick, disabled }) => {
   return (
     <div style={style}>
       <input
@@ -15,8 +15,9 @@ export const InputTodo = ({ todoText, onChange, onClick }) => {
         placeholder="todo"
         value={todoText}
         onChange={onChange}
+        disabled={disabled}
       />
-      <button onClick={onClick}>add</button>
+      <button onClick={onClick} disabled={disabled}>add</button>
     </div>
   );
 };

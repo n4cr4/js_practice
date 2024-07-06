@@ -44,13 +44,19 @@ export const Todo = () => {
     setDoneTodos(newDoneTodos);
   };
 
+  const isMaxLimitDoingTodos = doingTodos.length >= 5;
+
   return (
     <>
       <InputTodo
         todoText={todoText}
         onChange={onChangeTodoText}
         onClick={onClickAdd}
+        disabled={isMaxLimitDoingTodos}
       />
+      {isMaxLimitDoingTodos && (
+        <p style={{ color: "red" }}>first u shold do doing tasks😡</p>
+      )}
       <DoingTodos
         todos={doingTodos}
         onClickDone={onClickDone}
